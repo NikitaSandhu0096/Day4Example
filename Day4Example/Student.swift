@@ -9,27 +9,39 @@
 import Foundation
 
 class Student: Person {
-    lazy var marks = [String: Double]()
+    private lazy var marks = [String: Double]()
     
-    init(id: Int, name: String, gender: Gender, marks:[String : Double]) {
+    init(id: Int, name: String, gender: Gender, marks:[String : Double]){
         super.init(id: id, name: name, gender: gender)
         self.marks = marks
     }
+    
+    subscript(code: String) -> Double{
+        get{
+            self.marks[code] ?? 0.0
+        }
+        set(newValue){
+            self.marks.updateValue(newValue, forKey: code)
+        }
+    }
+    
     var total : Double{
         return self.calculateTotal()
     }
+    
     var per : Double{
         return self.calculatePer()
     }
+    
     var result : String{
         return "Pass"
     }
     
-    func setMarks(code: String, marks: Double) {
+    func setMarks(code: String, marks: Double){
         self.marks.updateValue(marks, forKey: code)
     }
     
-    private func calculateTotal() -> Double {
+    private func calculateTotal() -> Double{
         var t = 0.0
         for m in self.marks{
             t = t + m.value
@@ -37,7 +49,7 @@ class Student: Person {
         return t
     }
     
-    private func calculatePer() -> Double {
+    private func calculatePer() -> Double{
         return self.total/Double(self.marks.count)
     }
     

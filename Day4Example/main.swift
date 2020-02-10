@@ -14,3 +14,9 @@ var s1 = Student(id: 1, name: "Sandhu", gender: .FEMALE, marks: ["MAD01": 50.0, 
 
 s1.setMarks(code: "MAD03", marks: 70.5)
 //s1.setMarks(code: "MAD03", marks: 80.0)
+print(s1["MAD01"])
+
+print(s1["MAD02"])
+
+s1["MAD05"] = 55.0
+print(s1["MAD05"])
