@@ -25,6 +25,17 @@ class Student: Person {
         }
     }
     
+    subscript(code: Int) ->Any{
+        get{
+            if code == 0{
+                return self.id
+            }else if code == 1{
+                return self.name
+            }
+            return self.gender
+        }
+    }
+    
     var total : Double{
         return self.calculateTotal()
     }

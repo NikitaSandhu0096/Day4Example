@@ -20,3 +20,7 @@ print(s1["MAD02"])
 
 s1["MAD05"] = 55.0
 print(s1["MAD05"])
+
+print(s1[0])
+print(s1[1])
+print(s1[2])
