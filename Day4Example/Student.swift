@@ -16,6 +16,11 @@ class Student: Person {
         self.marks = marks
     }
     
+    init(id: Int, name: String, gender: Gender, birthDate : Date, marks : [String: Double]) {
+        super.init(id: id, name: name, gender: gender, birthDate: birthDate)
+        self.marks = marks
+    }
+    
     subscript(code: String) -> Double{
         get{
             self.marks[code] ?? 0.0
@@ -65,6 +70,12 @@ class Student: Person {
     }
     
     override func display() {
-        
+        super.display()
+        for m in self.marks{
+            print(m.key, ":", m.value)
+        }
+        print("Total : \(self.total)")
+        print("Percentage : \(self.per)")
+        print("Result : \(self.result)")
     }
 }
