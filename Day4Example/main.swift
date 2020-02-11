@@ -27,4 +27,3 @@ print(s1[2])
 
 s1.display()
 
-var s2 = 
