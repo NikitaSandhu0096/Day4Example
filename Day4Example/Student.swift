@@ -25,7 +25,7 @@ class Student: Person {
         }
     }
     
-    subscript(code: Int) ->Any{
+    subscript(code: Int) -> Any{
         get{
             if code == 0{
                 return self.id
@@ -64,4 +64,7 @@ class Student: Person {
         return self.total/Double(self.marks.count)
     }
     
+    override func display() {
+        
+    }
 }
